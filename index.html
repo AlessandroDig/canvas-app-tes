@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas App Test</title>
+</head>
+<body>
+    <h1>Welcome to the Canvas App</h1>
+    <p id="message"></p>
+
+    <script>
+        // Simula l'uso del Signed Request
+        function parseSignedRequest() {
+            const params = new URLSearchParams(window.location.search);
+            const signedRequest = params.get('signed_request');
+            if (signedRequest) {
+                document.getElementById('message').innerText = 
+                    "Hello, Salesforce user! Signed Request received.";
+            } else {
+                document.getElementById('message').innerText = 
+                    "Hello, Guest! No Signed Request found.";
+            }
+        }
+        parseSignedRequest();
+    </script>
+</body>
+</html>
